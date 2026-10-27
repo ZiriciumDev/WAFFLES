@@ -1,7 +1,9 @@
-use wasm_bindgen::prelude::*;
-use wasm_mutex
-use wasm_bindgen_futures
+use wasm_mutex;
+use wasm_bindgen_futures::spawn_local;
 use web_sys::{CanvasRenderingContext2d, HtmlCanvasElement};
+use std::sync::Arc;
+use wasm_mutex::Mutex;
+
 
 static mut TIME: f64 = 0.0;
 
