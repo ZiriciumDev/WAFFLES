@@ -1,4 +1,4 @@
-import initWasm, { WasmProgram, init_program as initChip8 } from '@firfi/rust-wasm-chip8';
+import initWasm, { WasmProgram, init_program as initChip8 } from './main.rs';
 
 const init = async () => {
 
