@@ -1,2 +1,4 @@
 # WAFFLES
-## WASM Application Framework for Lightweight Engine Services
+## WebAssembly Format For Low-level Execution Sandboxing
+
+A literal mobile cloud. But without the fluff. (get it?)
