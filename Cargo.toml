@@ -1,6 +1,6 @@
 
 [package]
-name = "game"
+name = "waffles"
 version = "0.1.0"
 edition = "2021"
 
@@ -16,7 +16,6 @@ web-sys = { version = "0.3", features = [
   "Document",
   "HtmlCanvasElement",
   "CanvasRenderingContext2d",
-  "WebSocket",
   "MessageEvent",
   "KeyboardEvent",
 ] }
