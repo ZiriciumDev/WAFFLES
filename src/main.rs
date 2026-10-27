@@ -1,7 +1,7 @@
 use wasm_bindgen::prelude::*;
 use wasm_mutex
 use wasm_bindgen_futures
-use web_sys::{CanvasRenderingContext2d, HtmlCanvasElement, WebSocket};
+use web_sys::{CanvasRenderingContext2d, HtmlCanvasElement};
 
 static mut TIME: f64 = 0.0;
 
