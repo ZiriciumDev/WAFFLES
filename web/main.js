@@ -1,29 +1,15 @@
-import init, { Game } from "./game.js";
+import initWasm, { WasmProgram, init_program as initChip8 } from '@firfi/rust-wasm-chip8';
 
-let last = performance.now();
-let game;
+const init = async () => {
 
+    await initWasm();
+    
+    const romData = await loadRom();
+    const canvas = document.getElementById("canvas");
+    
+    const cpu = initChip8(romData, canvas);
+    cpu.run(); // will run asynchronously
+    initKeyboardListeners(cpu); // wire up controls, listen to kb events etc
 
-async function start() {
-    await init();
-
-    try {
-        game = new Game("screen", null);
-        console.log("Game created");
-    } catch (e) {
-        console.error("Failed to create Game:", e);
-        return;
-    }
-
-    function tick(now) {
-        const dt = (now - last) / 1000;
-        last = now;
-
-        game.frame(dt);
-        requestAnimationFrame(tick);
-    }
-
-    requestAnimationFrame(tick);
+    // and at any point you call cpu.stop() which will clean up its resources  
 }
-
-start();
